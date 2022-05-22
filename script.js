@@ -6,7 +6,7 @@ class birthday {
         this.one = 1
         this.HBD = ["\nHappy Birthday to You 🎉✨🎁",
             "Today I wish you a fun time, shared with your dear ones, and a lifelong happiness!\n",
-            // .....
+            // ..... ข้อความอวยพรให้เพื่อนคุณ
         ];
     };
 
@@ -14,7 +14,7 @@ class birthday {
         while (true) {
             if (this.countdown >= this.one) {
                 this.countdown--
-                    console.log("เริ่มนับถอยหลังใน " + this.countdown);
+                    console.log("- เริ่มนับถอยหลังใน " + this.countdown); // นับถอยหหลัง
                 this.complete(); // callback เมื่อเงื่อนไขเป็นจริง
             };
             break;
@@ -22,10 +22,10 @@ class birthday {
     };
 
     complete = function() {
-        if (this.countdown == 1) {
+        if (this.countdown == 1 || this.countdown < 1) {
             setTimeout(() => this.HBD.forEach((msg) => {
                 console.log(msg.toString())
-            }), 3000);
+            }), 3000); // ข้อความ
             return clearInterval(delay);
         };
     };
