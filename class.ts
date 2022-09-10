@@ -12,10 +12,15 @@ interface Datedata { // ประกาศ type property ใน object
     full_day:CallableFunction;
 }
 class HBD {
-    Name:string = '' // ชื่อ
-    LastName:string = '' // นามสกุล
-    NickName:string = '' // ชื่อเล่น
-        ObjectDate:Datedata = { // รายละเอียดวัน
+    Name:string // ชื่อ
+    LastName:string // นามสกุล
+    NickName:string // ชื่อเล่น
+    ObjectDate:Datedata
+    public constructor(){
+        this.Name = ''
+        this.LastName = ''
+        this.NickName = ''
+        this.ObjectDate = { // รายละเอียดวัน
             ObjectDay:["วันอาทิตย์" , "วันจันทร์" , "วันอังคาร" , "วันพุธ" , "วันพฤหัสบดี" , "วันศุกร์" , "วันเสาร์"],
             ObjectMonth:["เดือนมกราคม","เดือนกุมภาพันธ์","เดือนมีนาคม","เดือนเมษายน", "เดือนพฤษภาคม","เดือนมิถุนายน","เดือนกรกฎาคม",
             "เดือนสิงหาคม","เดือนกันยายน","เดือนตุลาคม","เดือนพฤศจิกายน","เดือนธันวาคม"],
@@ -35,7 +40,8 @@ class HBD {
                 }
             }
         }
-        play_music = async () => { // เนื้อเพลง
+    }
+        public play_music = async () => { // เนื้อเพลง
             let Lyrics:string[]= ["-------------------------------------","\tHappy birthday to you" , "\tHappy birthday to you" , "\tHappy birthday" , "\tHappy birthday" , 
                         "\tHappy birthday to you" , "\tHappy birthday to you" , "\tHappy birthday to you" , "\tHappy birthday" ,
                         "\tHappy birthday" ,  "\tHappy birthday to you" , "\tHappy birthday to you" , "\tHappy birthday to you" ,
@@ -44,7 +50,7 @@ class HBD {
             for(let index in Lyrics){
                 console.log(Lyrics[index])
         }}
-        birthday_wishess = async () => { //อวยพรวันเกิด
+        public birthday_wishess = async () => { //อวยพรวันเกิด
             let wishes:(string|number)[] = [`Happy birthday to you🎁🎉✨🎈` , `😃 ${this.Name} ${this.LastName}` , `....` , `.....` ]
             return wishes.forEach(sd => console.log(sd))
         }    
