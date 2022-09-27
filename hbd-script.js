@@ -1,4 +1,4 @@
-// run terminal: node script.js
+// run terminal: node hbd-script.js
 class birthday {
 
     constructor(countdown_start) {
