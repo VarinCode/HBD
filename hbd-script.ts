@@ -67,7 +67,7 @@ class HBD implements HBDDATA {
                     current_time = ` ⌚ ${date.toTimeString()}`
                     try {
                         return Promise.resolve(String(current_time)); 
-                    } catch {
+                    } catch(err:unknown){
                         throw Promise.reject(HandleEvent);
                     }
                 },
@@ -125,7 +125,7 @@ class HBD implements HBDDATA {
             try {
                 return wishes;
             } catch(err:unknown){
-                throw Promise.resolve(err);
+                throw err;
             }
         }
     }
